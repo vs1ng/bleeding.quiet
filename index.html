@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Bleeding Quiet</title>
+  <style>
+    /* General styles */
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background-color: #1a1a1a;
+      color: #f5f5f5;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-image: url('https://www.transparenttextures.com/patterns/groovepaper.png');
+      user-select: none; /* Prevent text selection */
+    }
+
+    /* Sidebar with bleeding animation */
+    .sidebar {
+      background-color: #111;
+      color: #f5f5f5;
+      padding: 10px;
+      min-width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 2px solid #333;
+      justify-content: flex-start;
+    }
+
+    .sidebar-title .word {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .sidebar-title .word span {
+      line-height: 1;
+      font-size: 1.8em;
+    }
+
+    .bleeding span {
+      position: relative;
+      animation: drip 2s infinite linear;
+      animation-delay: calc(var(--i) * 0.2s);
+    }
+
+    @keyframes drip {
+      0% {
+        color: #f5f5f5;
+        text-shadow: 0 0 0 red;
+      }
+      50% {
+        color: #ff0000;
+        text-shadow: 0 5px 10px rgba(255, 0, 0, 0.6);
+      }
+      100% {
+        color: #f5f5f5;
+        text-shadow: 0 0 0 red;
+      }
+    }
+
+    .author-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+      font-size: 0.6em;
+      text-align: center;
+    }
+
+    .author-section img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 8px;
+    }
+
+    .author-name {
+      color: #ccc;
+      margin-top: 8px;
+      font-size: 0.9em;
+    }
+
+    .content {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 30px;
+      position: relative;
+    }
+
+    .article {
+      background: #222;
+      margin-bottom: 40px;
+      border-left: 5px solid #444;
+      margin-left: 40px;
+      color: #eee;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .article-header {
+      height: 150px;
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(60%) sepia(20%);
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+
+    .article-title {
+      position: relative;
+      z-index: 2;
+      color: white;
+      font-size: 1.5em;
+      padding: 15px;
+      margin: 0;
+    }
+
+    .date {
+      font-size: 0.9em;
+      color: #aaa;
+      margin: 10px 20px 5px;
+    }
+
+    .article p {
+      margin: 10px 20px 20px;
+      line-height: 1.6;
+    }
+
+    .sources {
+      background-color: #111;
+      padding: 10px 20px;
+      font-size: 0.9em;
+      color: #ccc;
+      border-top: 1px solid #444;
+    }
+
+    .sources a {
+      color: #88ccff;
+      display: block;
+      margin: 5px 0;
+      word-break: break-all;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+        overflow-y: auto;
+      }
+
+      .sidebar {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        min-width: unset;
+        padding: 5px 15px;
+        border-right: none;
+        border-bottom: 2px solid #333;
+      }
+      .sidebar {
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 15px;
+  border-bottom: 2px solid #333;
+  border-right: none;
+}
+.sidebar-title {
+  display: flex;
+  gap: 10px;
+}
+.sidebar-title .word {
+  flex-direction: row !important;
+  margin: 0;
+}
+.sidebar-title .word span {
+  font-size: 1.2em;
+}
+
+      .author-section {
+        display: none; /* hide on mobile */
+      }
+
+      .article {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body oncontextmenu="return false;">
+  <div class="sidebar">
+    <div class="sidebar-title">
+      <div class="word">
+        <span>T</span><span>H</span><span>E</span>
+      </div>
+      <div class="word bleeding">
+        <span style="--i:1">B</span><span style="--i:2">L</span><span style="--i:3">E</span><span style="--i:4">E</span>
+        <span style="--i:5">D</span><span style="--i:6">I</span><span style="--i:7">N</span><span style="--i:8">G</span>
+      </div>
+      <div class="word">
+        <span>Q</span><span>U</span><span>I</span><span>E</span><span>T</span>
+      </div>
+    </div>
+    <div class="author-section">
+      <div>Author:</div>
+      <img src="me.jpg" alt="Vinayak Singh" />
+      <div class="author-name">Vinayak Singh</div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="article">
+      <div class="article-header" style="background-image: url('https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Libraries/Production%20Library/12-11-2024-UNICEF-Sudan.jpg/image1170x530cropped.jpg');">
+        <div class="overlay"></div>
+        <h2 class="article-title">Terror in Her Skin: The Unseen Frontlines of Sudan’s War</h2>
+      </div>
+      <div class="date">April 2025</div>
+      <p>Since April 2023, the conflict between the Sudanese Armed Forces (SAF) and the Rapid Support Forces (RSF) has led to widespread use of sexual violence as a method of war across Sudan. The United Nations reports that over 12 million women and girls, as well as increasing numbers of men and boys, are at risk. Survivors have reported being detained and subjected to rape, physical assault, and psychological abuse. In some cases, women and girls have been gang-raped by armed actors. Several reports indicate that rape has been used in front of family members or fellow detainees as a form of intimidation and humiliation. Victims have also described being denied access to medical treatment after the assaults. Testimonies collected by humanitarian agencies confirm that some women were held for extended periods in RSF-occupied buildings and subjected to repeated sexual violence. Children have also been among the victims.
+
+The United Nations Population Fund (UNFPA) is providing support through mobile health teams, health clinics, and safe spaces. However, ongoing attacks on health facilities, looting of medical supplies, and displacement of healthcare personnel are disrupting services. More than 540 health facilities across the country have been damaged or destroyed, limiting the ability to respond to sexual violence cases and provide emergency contraception, post-rape care kits, and psychosocial support.
+
+Reports from Khartoum indicate that some women were abducted during house-to-house raids or at checkpoints and were later found with signs of physical and sexual abuse. Medical professionals have reported treating women and girls for injuries consistent with violent sexual assault. In some areas, community leaders have noted an increase in early pregnancies, sexually transmitted infections, and psychological trauma among survivors. A number of women have gone missing following armed attacks on civilian areas, and their whereabouts remain unknown.</p>
+
+      <div class="sources">
+        <strong>Sources:</strong>
+        <a href="https://news.un.org/en/story/2025/04/1161876" target="_blank">UN News: April 2025 - Sexual Violence in Sudan</a>
+        <a href="https://news.un.org/en/story/2025/04/1161801" target="_blank">UN News: Humanitarian Response to Sudan Crisis</a>
+        <a href="https://news.un.org/en/story/2025/01/1159111" target="_blank">UN News: Sudan Conflict and its Impact on Civilians</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Disable screenshot and selection
+    document.addEventListener('keydown', function (e) {
+      if (e.key === "PrintScreen" || (e.ctrlKey && e.key === 'p')) {
+        e.preventDefault();
+        alert("Screenshot functionality is disabled.");
+      }
+    });
+
+    // Attempt to prevent screen capture (limited effectiveness on browser)
+    document.addEventListener('keyup', function (e) {
+      if (e.key === "PrintScreen") {
+        navigator.clipboard.writeText('');
+        alert("Screenshot blocked.");
+      }
+    });
+
+    // Disable text selection
+    document.addEventListener("selectstart", function (e) {
+      const tag = e.target.tagName.toLowerCase();
+      if (tag !== "a") {
+        e.preventDefault();
+      }
+    });
+
+    // Disable right-click
+    document.addEventListener("contextmenu", function (e) {
+      e.preventDefault();
+    });
+  </script>
+</body>
+</html>
+
