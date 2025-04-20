@@ -232,7 +232,8 @@
       </div>
       <div class="date">By Vinayak Singh, April 2025</div>
       <p>Since April 2023, the conflict between the Sudanese Armed Forces (SAF) and the Rapid Support Forces (RSF) has led to widespread use of sexual violence as a method of war across Sudan. The United Nations reports that over 12 million women and girls, as well as increasing numbers of men and boys, are at risk. Survivors have reported being detained and subjected to rape, physical assault, and psychological abuse. In some cases, women and girls have been gang-raped by armed actors. Several reports indicate that rape has been used in front of family members or fellow detainees as a form of intimidation and humiliation. Victims have also described being denied access to medical treatment after the assaults. Testimonies collected by humanitarian agencies confirm that some women were held for extended periods in RSF-occupied buildings and subjected to repeated sexual violence. Children have also been among the victims.
-
+      <br>
+      </br>
 The United Nations Population Fund (UNFPA) is providing support through mobile health teams, health clinics, and safe spaces. However, ongoing attacks on health facilities, looting of medical supplies, and displacement of healthcare personnel are disrupting services. More than 540 health facilities across the country have been damaged or destroyed, limiting the ability to respond to sexual violence cases and provide emergency contraception, post-rape care kits, and psychosocial support.
 
 Reports from Khartoum indicate that some women were abducted during house-to-house raids or at checkpoints and were later found with signs of physical and sexual abuse. Medical professionals have reported treating women and girls for injuries consistent with violent sexual assault. In some areas, community leaders have noted an increase in early pregnancies, sexually transmitted infections, and psychological trauma among survivors. A number of women have gone missing following armed attacks on civilian areas, and their whereabouts remain unknown.</p>
@@ -244,38 +245,87 @@ Reports from Khartoum indicate that some women were abducted during house-to-hou
         <a href="https://news.un.org/en/story/2025/01/1159111" target="_blank">UN News: Sudan Conflict and its Impact on Civilians</a>
       </div>
     </div>
+    <div class="article">
+    <div class="article-header" style="background-image: url('fth.jpg');">
+    <div class="overlay"></div>
+    <h2 class="article-title">Oslo to Infighting: The Broken Palestinian Dream</h2>
+    </div>
+    <div class="date">By Vinayak Singh, April 2025</div>
+    <p>
+    The conflict between Fatah and Hamas is one that is very often overlooked by Pro‑Palestinians when demanding for a recognized Palestinian State. To begin with, the “Palestine” as we know it is in no way sociopolitically united. Do they both dislike Israel? Yes. Do they get along with each other? No. The Gaza Strip is controlled by Hamas while Judea and Samaria (aka the West Bank) is administered by Fatah. Their differences lay within the fact that while Fatah initially kicked off a major armed offensive against the Israeli security forces back in the 1950s, they eventually moved over to focus more on diplomacy and dialogue while recognising the State of Israel—which brought them successes such as the Oslo Accords, the first documented round of negotiations between Israel and the Fatah‑administered PLO, and formal recognition of limited Palestinian self‑rule.
+    <br>
+    </br>
+    On the flipside exists Hamas which, starting in 1987, made it very clear from the beginning that it would pursue an uncompromising armed struggle, reject any form of Israeli recognition and insist on the liberation of all historic Palestine. Its founding charter called explicitly for jihad against Israel and denied its right to exist, a stance enforced through suicide bombings, rocket attacks and other militant tactics. The 2007 Hamas takeover of Gaza—and the ensuing blockade—only deepened the schism with Fatah, leaving the Palestinian polity fractured and undermining any hope of a unified negotiating front in future peace talks.
+    
+    While reconciliation attempts were made numerous times both directly and via mediation, each would face failure due to varying reasons and at the end, Fatah would blame Hamas for representing Iranian interests while Hamas would blame Fatah for representing Israeli interests.
+    
+    The idea of a Palestinian State as the status quo is, goes deep in the territories of unrealistic as the united palestine would instantly turn into a blazing ground of civil war, as was the scene in the Gaza Strip when in June 2007, The Fatah-Oriented Presidential Guard launched a premtive offensive against Hamas following a buildup of tensions since 2006 when Abbas refused to cede full control to Hamas, which was  followed by gruesome infighting between the two factions resulting in Fatah being eradicated from the Gaza Strip and consequently the land falling in full control of Hamas.
+    </p>
+    
+    <div class="sources">
+    <strong>Sources:</strong>
+    <a href="https://www.securitycouncilreport.org/monthly-forecast/2024-10/the-middle-east-including-the-palestinian-question-12.php" target="_blank">Security Council Report: October 2024 - The Middle East, Including the Palestinian Question</a>
+    <a href="https://www.ochaopt.org/content/hostilities-gaza-strip-and-israel-flash-update-133" target="_blank">OCHA: 2024 Flash Update - Hostilities in the Gaza Strip and Israel</a>
+    <a href="https://www.securitycouncilreport.org/monthly-forecast/2025-04/the-middle-east-including-the-palestinian-question-14.php" target="_blank">Security Council Report: April 2025 - The Middle East, Including the Palestinian Question</a>
+    <a href="https://www.securitycouncilreport.org/monthly-forecast/2025-01/the-middle-east-including-the-palestinian-question-13.php" target="_blank">Security Council Report: January 2025 - The Middle East, Including the Palestinian Question</a>
+    <a href="https://www.theguardian.com/world/2007/jun/15/israel4" target="_blank">The Guardian: 2007 - Gaza Takeover and Political Divide</a>
+    <a href="https://www.cfr.org/backgrounder/what-hamas" target="_blank">CFR: What is Hamas?</a>
+    <a href="https://www.britannica.com/place/Palestine/Split-administration-West-Bank-and-the-Gaza-Strip-2007" target="_blank">Britannica: 2007 Split Administration - West Bank and Gaza</a>
+    <a href="https://www.wilsoncenter.org/article/palestinians-fighting-and-governing" target="_blank">Wilson Center: Palestinians - Fighting and Governing</a>
+    
+    </div>
+    </div>
   </div>
 
   <script>
-    // Disable screenshot and selection
-    document.addEventListener('keydown', function (e) {
-      if (e.key === "PrintScreen" || (e.ctrlKey && e.key === 'p')) {
-        e.preventDefault();
-        alert("Screenshot functionality is disabled.");
-      }
-    });
-
-    // Attempt to prevent screen capture (limited effectiveness on browser)
-    document.addEventListener('keyup', function (e) {
-      if (e.key === "PrintScreen") {
-        navigator.clipboard.writeText('');
-        alert("Screenshot blocked.");
-      }
-    });
-
-    // Disable text selection
-    document.addEventListener("selectstart", function (e) {
-      const tag = e.target.tagName.toLowerCase();
-      if (tag !== "a") {
-        e.preventDefault();
-      }
-    });
-
-    // Disable right-click
-    document.addEventListener("contextmenu", function (e) {
+  // Block PrintScreen and Ctrl+P
+  document.addEventListener('keydown', function (e) {
+    if (
+      e.key === "PrintScreen" ||
+      (e.ctrlKey && e.key.toLowerCase() === 'p') ||
+      (e.altKey && e.key === "PrintScreen")
+    ) {
       e.preventDefault();
+      alert("Screenshot function is disabled.");
+    }
+  });
+  
+  // Clear clipboard when PrintScreen is used
+  document.addEventListener('keyup', function (e) {
+    if (e.key === "PrintScreen") {
+      navigator.clipboard.writeText('');
+      alert("Screenshot blocked.");
+    }
+  });
+  
+  // Disable text selection (except links)
+  document.addEventListener("selectstart", function (e) {
+    if (e.target.tagName.toLowerCase() !== "a") {
+      e.preventDefault();
+    }
+  });
+  
+  // Disable right-click
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+  
+  // Attempt to detect screenshot on mobile (Chrome only, limited)
+  if (/Android/i.test(navigator.userAgent) && /Chrome/i.test(navigator.userAgent)) {
+    let wasFocused = true;
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "hidden") {
+        wasFocused = false;
+      } else {
+        if (!wasFocused) {
+          alert("Screenshot attempt detected. This is not allowed.");
+          wasFocused = true;
+        }
+      }
     });
+  }
   </script>
+  
 </body>
 </html>
 
